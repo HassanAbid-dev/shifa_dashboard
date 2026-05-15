@@ -16,8 +16,10 @@ const ZonesTab = () => {
       style={{ backgroundColor: "#0f1729", borderRight: "1px solid #1e2a45" }}
     >
       {/* Title */}
-      <div className="p-3 pb-0">
-        <p className="text-slate-400 text-xs mb-2">Area / Zone Selection</p>
+      <div className="p-2 md:p-3 pb-0">
+        <p className="text-slate-400 text-xs mb-1 md:mb-2">
+          Area / Zone Selection
+        </p>
 
         {/* Search */}
         <input

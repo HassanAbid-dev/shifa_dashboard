@@ -11,7 +11,7 @@ const severityColor = (severity) => {
 
 const StatCard = ({ label, value, sub, icon: Icon, iconColor }) => (
   <div
-    className="flex flex-col p-1 rounded"
+    className="flex flex-col p-1 md:p-1.5 rounded text-[8px] md:text-[9px]"
     style={{ backgroundColor: "#0a0f1e", border: "1px solid #1e2a45" }}
   >
     <div className="flex items-center justify-between">
@@ -41,7 +41,7 @@ const AnalyticsPanel = () => {
         <div className="flex items-center justify-between">
           <span
             className="text-slate-200 font-semibold"
-            style={{ fontSize: "10px" }}
+            style={{ fontSize: "8px" }}
           >
             Analytics Summary (OPD)
           </span>
@@ -94,13 +94,13 @@ const AnalyticsPanel = () => {
           <div className="flex items-center justify-between mb-1">
             <span
               className="font-semibold text-slate-300"
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "8px" }}
             >
               Recent Alerts (OPD)
             </span>
             <button
               className="text-purple-400 hover:text-purple-300"
-              style={{ fontSize: "9px" }}
+              style={{ fontSize: "7px" }}
             >
               View All
             </button>
@@ -122,35 +122,28 @@ const AnalyticsPanel = () => {
                     src={alert.image}
                     alt={alert.title}
                     className="rounded flex-shrink-0 object-cover"
-                    style={{ width: "40px", height: "28px" }}
+                    style={{ width: "28px", height: "20px" }}
                   />
                   <div className="flex-1 min-w-0">
                     <span
-                      className="font-medium block truncate"
-                      style={{ color: s.color, fontSize: "9px" }}
+                      className="font-medium block truncate text-[7px] md:text-[6px]"
+                      style={{ color: s.color }}
                     >
                       {alert.title}
                     </span>
-                    <span
-                      className="block truncate text-slate-500"
-                      style={{ fontSize: "8px" }}
-                    >
+                    <span className="block truncate text-slate-500 text-[6px] md:text-[6px]">
                       {alert.location}
                     </span>
-                    <span
-                      className="text-slate-600"
-                      style={{ fontSize: "8px" }}
-                    >
+                    <span className="text-slate-600 text-[5px] md:text-[6px]">
                       {alert.time}
                     </span>
                   </div>
                   <span
-                    className="px-1 py-0.5 rounded flex-shrink-0"
+                    className="px-0.5 md:px-1 py-0.5 rounded flex-shrink-0 text-[6px]"
                     style={{
                       backgroundColor: s.bg,
                       color: s.color,
                       border: `1px solid ${s.border}`,
-                      fontSize: "8px",
                     }}
                   >
                     {alert.severity}

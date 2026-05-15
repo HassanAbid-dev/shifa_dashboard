@@ -26,7 +26,10 @@ const ScenarioTable = () => {
   );
 
   return (
-    <div className="px-3 py-1.5" style={{ backgroundColor: "#080f1e" }}>
+    <div
+      className="px-2 md:px-3 py-1 md:py-1.5"
+      style={{ backgroundColor: "#080f1e" }}
+    >
       {/* Header */}
       <div className="flex items-center gap-5 mb-1.5">
         <p className="text-slate-300 text-xs font-medium">
@@ -93,18 +96,23 @@ const ScenarioTable = () => {
                   style={{ borderBottom: "1px solid #1e2a45" }}
                   className="hover:bg-slate-800/30"
                 >
-                  <td className="px-2 py-1 text-slate-300">
-                    <div className="flex items-center gap-1.5">
+                  <td className="px-2 py-1 text-slate-300 text-xs md:text-sm">
+                    <div className="flex items-center gap-0.5 md:gap-1.5">
                       <span>{scenario.icon}</span>
-                      <span className="whitespace-nowrap">{scenario.name}</span>
+                      <span className="whitespace-nowrap truncate">
+                        {scenario.name}
+                      </span>
                     </div>
                   </td>
                   {cameras.map((cam) => (
-                    <td key={cam} className="px-2 py-1 text-center">
+                    <td
+                      key={cam}
+                      className="px-0.5 md:px-2 py-1 text-center text-xs md:text-sm"
+                    >
                       <AlertCell count={cameraAlerts[cam][scenario.id]} />
                     </td>
                   ))}
-                  <td className="px-2 py-1 text-center">
+                  <td className="px-1 md:px-2 py-1 text-center text-xs md:text-sm">
                     <span
                       className={
                         total > 0
@@ -123,22 +131,23 @@ const ScenarioTable = () => {
       </div>
 
       {/* Footer */}
-      <div
-        className="flex items-center justify-between mt-1.5"
-        style={{ fontSize: "10px" }}
-      >
-        <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1 text-slate-400">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mt-1.5 text-xs md:text-sm gap-1 md:gap-3">
+        <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs md:text-sm">
+          <span className="flex items-center gap-1 text-slate-400 whitespace-nowrap">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
             No Events
           </span>
-          <span className="text-amber-400">⚠️ 1-2 Low</span>
-          <span className="text-orange-400">⚠️ 3-5 Medium</span>
-          <span className="text-red-400">⚠️ &gt;5 High</span>
+          <span className="text-amber-400 whitespace-nowrap">⚠️ 1-2 Low</span>
+          <span className="text-orange-400 whitespace-nowrap">
+            ⚠️ 3-5 Medium
+          </span>
+          <span className="text-red-400 whitespace-nowrap">⚠️ &gt;5 High</span>
         </div>
-        <div className="flex items-center gap-2 text-slate-400">
-          <span>Total Alerts (All OPD Cameras)</span>
-          <span className="bg-red-600 text-white px-2 py-0.5 rounded-full font-medium">
+        <div className="flex items-center gap-1 md:gap-2 text-slate-400 text-xs md:text-sm">
+          <span className="whitespace-nowrap">
+            Total Alerts (All OPD Cameras)
+          </span>
+          <span className="bg-red-600 text-white px-1 md:px-2 py-0.5 rounded-full font-medium text-xs md:text-sm">
             {cameras.reduce(
               (sum, cam) =>
                 sum +

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import { Bell } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
@@ -13,13 +13,17 @@ const Header = () => {
             alt="Hospital Logo"
           />
           <div className="flex flex-col ">
-            <p>Shifa International</p>
+            <Link to="/" className="hover:cursor-pointer ">
+              Shifa International
+            </Link>
             <p>Hospital</p>
           </div>
         </div>
         <div className="title">
           <p>AI Video Analytics System</p>
-          <p>Smart Surveillance. Safer Hospital.</p>
+          <p className=" text-xs text-slate-400">
+            Smart Surveillance. Safer Hospital.
+          </p>
         </div>
         <div className="currentRole ">
           <select

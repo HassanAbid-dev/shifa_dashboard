@@ -2,6 +2,7 @@ import cameras from "../../data/camera";
 import CameraCard from "./CameraCard";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import react from "react";
 
 const CAMERAS_PER_PAGE = 6;
 
