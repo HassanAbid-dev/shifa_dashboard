@@ -6,45 +6,48 @@ const CameraCard = ({ camera }) => {
 
   return (
     <div
-      className="flex flex-col rounded-lg overflow-hidden"
+      className="flex flex-col rounded-lg overflow-hidden h-full"
       style={{ border: "1px solid #1e2a45", backgroundColor: "#0a0f1e" }}
     >
-      {/* Top bar — name + people count */}
+      {/* Top bar */}
       <div
-        className="flex items-center justify-between px-2 py-1"
+        className="flex items-center justify-between px-2 py-0.5 flex-shrink-0"
         style={{ backgroundColor: "#0f1729" }}
       >
-        {/* Green live dot + camera name */}
         <div className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
-          <span className="text-xs text-slate-300 truncate">{camera.name}</span>
+          <span
+            className="text-slate-300 truncate"
+            style={{ fontSize: "10px" }}
+          >
+            {camera.name}
+          </span>
         </div>
-
-        {/* People count */}
-        <div className="flex items-center gap-1 flex-shrink-0 ml-2">
-          <Users size={11} className="text-slate-400" />
-          <span className="text-xs text-slate-400">{camera.people}</span>
+        <div className="flex items-center gap-1 flex-shrink-0 ml-1">
+          <Users size={10} className="text-slate-400" />
+          <span className="text-slate-400" style={{ fontSize: "10px" }}>
+            {camera.people}
+          </span>
         </div>
       </div>
 
-      {/* Camera image */}
-      <div className="relative">
+      {/* Image */}
+      <div className="relative flex-1 min-h-0">
         <img
           src={camera.image}
           alt={camera.name}
-          className="w-full object-cover"
-          style={{ height: "100px" }}
+          className="w-full h-full object-cover"
         />
-
-        {/* Bottom overlay — timestamp + star */}
         <div
-          className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-2 py-1"
+          className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-2 py-0.5"
           style={{ backgroundColor: "rgba(0,0,0,0.55)" }}
         >
-          <span className="text-xs text-slate-300">{camera.time}</span>
+          <span className="text-slate-300" style={{ fontSize: "10px" }}>
+            {camera.time}
+          </span>
           <button onClick={() => setStarred(!starred)}>
             <Star
-              size={14}
+              size={12}
               className={starred ? "text-yellow-400" : "text-slate-400"}
               fill={starred ? "#facc15" : "none"}
             />

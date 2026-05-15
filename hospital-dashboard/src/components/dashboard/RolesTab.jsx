@@ -24,73 +24,68 @@ const RolesTab = () => {
   const [activeRole, setActiveRole] = useState("OPS Incharge");
 
   return (
-    <div className="p-3">
-      {/* Title */}
-      <p className="text-slate-400 text-xs mb-3 px-1">
+    <div className="px-3 py-1.5">
+      <p className="text-slate-400 text-xs mb-1.5 px-1">
         Role Based View – Appointment / Responsibility Wise Access
       </p>
-
-      {/* Row */}
       <div className="flex items-center gap-2">
-        {/* Left arrow */}
         <button className="text-slate-500 hover:text-white flex-shrink-0">
-          <ChevronLeft size={18} />
+          <ChevronLeft size={16} />
         </button>
-
-        {/* Cards */}
         <div className="flex gap-2 flex-1">
           {roles.map((role) => {
             const Icon = role.icon;
             const isActive = activeRole === role.label;
-
             return (
               <div
                 key={role.label}
                 onClick={() => setActiveRole(role.label)}
-                className="relative flex items-center gap-3 p-1 rounded-lg cursor-pointer flex-1 min-h-[65px] transition-all duration-150"
+                className="relative flex items-center gap-2 px-2 py-1.5 rounded-lg cursor-pointer flex-1 transition-all duration-150"
                 style={{
                   border: isActive ? "1px solid #7c3aed" : "1px solid #1e2a45",
                   backgroundColor: isActive
-                    ? "rgba(109, 40, 217, 0.15)"
+                    ? "rgba(109,40,217,0.15)"
                     : "#111827",
+                  minHeight: "52px",
                 }}
               >
-                {/* Checkmark top right — only on active */}
                 {isActive && (
-                  <div className="absolute top-2 right-2">
-                    <CheckCircle size={14} className="text-purple-400" />
+                  <div className="absolute top-1 right-1">
+                    <CheckCircle size={12} className="text-purple-400" />
                   </div>
                 )}
-
-                {/* Icon */}
                 <div
-                  className="p-2 rounded-md flex-shrink-0"
+                  className="p-1.5 rounded-md flex-shrink-0"
                   style={{ backgroundColor: "#1e2a45" }}
                 >
                   <Icon
-                    size={20}
+                    size={16}
                     className={isActive ? "text-purple-400" : "text-slate-400"}
                   />
                 </div>
-
-                {/* Text */}
                 <div>
                   <h3
-                    className="font-semibold text-xs leading-tight uppercase tracking-wide"
-                    style={{ color: isActive ? "#a78bfa" : "#94a3b8" }}
+                    className="font-semibold leading-tight uppercase tracking-wide"
+                    style={{
+                      color: isActive ? "#a78bfa" : "#94a3b8",
+                      fontSize: "10px",
+                    }}
                   >
                     {role.label}
                   </h3>
-                  <p className="text-xs mt-0.5 text-slate-500">{role.sub}</p>
+                  <p
+                    className="text-slate-500 mt-0.5"
+                    style={{ fontSize: "9px" }}
+                  >
+                    {role.sub}
+                  </p>
                 </div>
               </div>
             );
           })}
         </div>
-
-        {/* Right arrow */}
         <button className="text-slate-500 hover:text-white flex-shrink-0">
-          <ChevronRight size={18} />
+          <ChevronRight size={16} />
         </button>
       </div>
     </div>

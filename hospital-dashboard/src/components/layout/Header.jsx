@@ -21,9 +21,9 @@ const Header = () => {
           <p>AI Video Analytics System</p>
           <p>Smart Surveillance. Safer Hospital.</p>
         </div>
-        <div className="currentRole">
+        <div className="currentRole ">
           <select
-            className="currentRole outline-none bg-slate-950"
+            className="currentRole outline-none bg-slate-950 hover:cursor-pointer"
             name="currentRole"
             id="currentRole"
           >
@@ -32,14 +32,14 @@ const Header = () => {
             <option>Nurse</option>
           </select>
         </div>
-        <div className="relative notification rounded-full bg-slate-900 p-2">
+        <div className="relative notification rounded-full bg-slate-900 p-2 hover:cursor-pointer">
           <Bell size={24} />
           <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
             2
           </span>
         </div>
         <div className="w-px h-6 bg-slate-700" />
-        <div className="clock">
+        <div className="clock hover:cursor-pointer">
           <div className="time">
             <span>10:30:30 AM</span>
           </div>
@@ -48,8 +48,8 @@ const Header = () => {
             <div className="date">29,April,2026</div>
           </div>
         </div>
-        <div className="w-px h-6 bg-slate-700" />
-        <div className="superRole">
+        <div className="w-px h-6 bg-slate-700 " />
+        <div className="superRole hover:cursor-pointer">
           <p>Admin</p>
           <span>Super Administrator</span>
         </div>
