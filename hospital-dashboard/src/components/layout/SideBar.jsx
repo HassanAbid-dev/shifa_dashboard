@@ -70,31 +70,6 @@ const Sidebar = ({ onClose }) => {
           </NavLink>
         ))}
       </nav>
-
-      {/* Bottom status */}
-      <div className="flex flex-col">
-        <div className="mx-2 border-t border-slate-700" />
-        <div className="p-2 flex flex-col gap-0.5">
-          <div className="flex items-center gap-2">
-            <Settings size={12} className="text-green-400 flex-shrink-0" />
-            <span className="text-xs text-slate-400 truncate">
-              System Status
-            </span>
-          </div>
-          <span className="text-xs text-green-400 font-medium pl-5 truncate">
-            All Systems Operational
-          </span>
-        </div>
-        <div className="mx-2 border-t border-slate-700" />
-        <div className="p-2">
-          <span
-            className="text-slate-600 truncate block"
-            style={{ fontSize: "9px" }}
-          >
-            © 2026 Nexer Technology Solutions
-          </span>
-        </div>
-      </div>
     </aside>
   );
 };
