@@ -2,3 +2,11 @@
 body {
   font-family: "Inter", sans-serif;
 }
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}

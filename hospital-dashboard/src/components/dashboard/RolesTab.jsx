@@ -24,7 +24,7 @@ const RolesTab = () => {
   const [activeRole, setActiveRole] = useState("OPS Incharge");
 
   return (
-    <div className="p-3" style={{ backgroundColor: "#0f1729" }}>
+    <div className="p-3">
       {/* Title */}
       <p className="text-slate-400 text-xs mb-3 px-1">
         Role Based View – Appointment / Responsibility Wise Access
@@ -47,7 +47,7 @@ const RolesTab = () => {
               <div
                 key={role.label}
                 onClick={() => setActiveRole(role.label)}
-                className="relative flex items-center gap-3 p-3 rounded-lg cursor-pointer flex-1 min-h-[72px] transition-all duration-150"
+                className="relative flex items-center gap-3 p-1 rounded-lg cursor-pointer flex-1 min-h-[65px] transition-all duration-150"
                 style={{
                   border: isActive ? "1px solid #7c3aed" : "1px solid #1e2a45",
                   backgroundColor: isActive
