@@ -39,9 +39,9 @@ const navItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-[200px] h-screen bg-slate-900 flex flex-col border-r border-slate-700">
+    <aside className="w-[200px] h-full bg-slate-900 flex flex-col border-r border-slate-700">
       {/* Nav Links */}
-      <nav className="flex-1 overflow-y-auto p-2 flex flex-col gap-1">
+      <nav className="flex-1  p-2 flex flex-col gap-1">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
@@ -60,8 +60,22 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      {/* Bottom */}
-      <div className="p-4 border-t border-slate-700">status here</div>
+      <div className="flex flex-col">
+        <div className="p-3 border-t border-slate-700 flex flex-col gap-1 mx-2">
+          <div className="flex items-center gap-2">
+            <Settings size={14} className="text-green-400" />
+            <span className="text-xs text-slate-400">System Status</span>
+          </div>
+          <span className="text-xs text-green-400 font-medium pl-5">
+            All Systems Operational
+          </span>
+        </div>
+        <div className="p-2 border-t border-slate-700 mx-2">
+          <span className="text-slate-600 mb-2" style={{ fontSize: "9px" }}>
+            © 2026 Nexer Technology Solutions
+          </span>
+        </div>
+      </div>
     </aside>
   );
 };
