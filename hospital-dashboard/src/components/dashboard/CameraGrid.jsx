@@ -2,7 +2,6 @@ import cameras from "../../data/camera";
 import CameraCard from "./CameraCard";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import react from "react";
 
 const CAMERAS_PER_PAGE = 6;
 
@@ -27,8 +26,13 @@ const CameraGrid = () => {
         <span className="text-xs text-slate-400">{cameras.length} Cameras</span>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-3 gap-1.5 flex-1 min-h-0">
+      {/* 
+        Grid:
+        mobile  → 1 column
+        tablet  → 2 columns  
+        desktop → 3 columns
+      */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1.5 flex-1 min-h-0">
         {visible.map((cam) => (
           <CameraCard key={cam.id} camera={cam} />
         ))}
@@ -36,7 +40,7 @@ const CameraGrid = () => {
 
       {/* Pagination */}
       <div className="flex items-center justify-between mt-1.5 px-1">
-        <span className="text-xs text-slate-400" style={{ fontSize: "10px" }}>
+        <span className="text-slate-400" style={{ fontSize: "10px" }}>
           Showing {(currentPage - 1) * CAMERAS_PER_PAGE + 1} to{" "}
           {Math.min(currentPage * CAMERAS_PER_PAGE, cameras.length)} of{" "}
           {cameras.length} cameras
